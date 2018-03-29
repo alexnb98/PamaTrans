@@ -10,6 +10,7 @@ $lightOrange: #FF9800
 // General
 body
 	font-family: 'Raleway', sans-serif
+	background-color: $white
 a 
 	text-decoration: none
 // Website
@@ -51,12 +52,12 @@ nav
 			z-index: 1
 
 	#navbar
-		background-color: $orange
+		background-color: $white
 		position: relative
 		width: 100%
 		height: 70px
 		top: -140px
-		z-index: 2
+		z-index: 3
 		box-shadow: 0 10px 10px rgba(0, 0, 0, 0.3)
 		&:after
 			box-shadow: 0 10px 10px rgba(0, 0, 0, 0.3)
@@ -64,7 +65,7 @@ nav
 			width: 100%
 			height: 100%
 			content: ''
-			background-color: $orange 
+			background-color: $white 
 			top: 0
 			right: 0 
 			bottom: 0 
@@ -74,7 +75,7 @@ nav
 			z-index: -1
 	ul 
 		display: flex
-		justify-content: space-around
+		justify-content: flex-end
 	li  
 		margin-top: 30px
 		padding: 20px
@@ -99,18 +100,20 @@ nav
 			-webkit-transform: scaleY(0.618) translateX(0)
 			transform: scaleY(0.618) translateX(0)
 	a
-		color: $white
+		color: $dark
 		padding: 20px
 
 
 header
-	height: 60vh
+	height: 80vh
 	background-color: $dark
 	top: -150px
 	z-index: -2
 	text-align: center
-	img 
+	overflow: hidden
+	#truck 
 		width: 100%
+		transform: translateZ(1px)
 	h1
 		font-size: 100px
 		text-transform: uppercase
@@ -127,7 +130,6 @@ header
 	z-index: 3
 
 .btn 
-	// z-index: 3
 	position: relative
 	background: none
 	cursor: pointer
@@ -176,3 +178,125 @@ header
 	display: flex
 	div
 		width: 100%
+
+// Animation
+#navbg, #navbar, #company 
+	animation: appear 0.5s ease both 4s
+
+nav, header
+	animation: intro 0.7s ease both
+
+.images
+	position: absolute
+	width: 10% 
+	top: 35%
+	left: 30vw
+	animation: images 0.75s linear both 2s
+	#box-one
+		position: absolute
+		left: 0vw
+		animation: box 0.75s ease both 0.5s, move 0.25s ease-in both 2.75s 
+	#box-two
+		position: absolute
+		left: 12vw 
+		animation: box 0.75s ease both 0.9s, move 0.25s ease-in both 3s 
+	#box-tree
+		position: absolute
+		left: 24vw 
+		animation: box 0.75s ease both 1.3s, move 0.25s ease-in both 3.25s 
+
+#truck
+	position: relative
+	animation: truck 0.75s ease both 2s, zuck 0.2s ease both 2.9s
+	transition: all 0.4s 
+	transform: scale(1)
+	&:hover 
+		transform: scale(1.2)
+
+@keyframes intro
+	0%
+		width: 0%
+	100%
+		width: 100%
+
+@keyframes box 
+	0% 
+		transform: scale(0) rotateZ(0deg)
+	100%
+		transform: scale(1) rotateZ(360deg)
+
+@keyframes move
+	0%
+
+	100%
+		left: 50vw
+
+@keyframes images
+	0%
+		
+	100%
+		left: 10vw
+
+@keyframes truck 
+	0%
+		left: 20vw
+		opacity: 0
+	100%
+		left: 0
+		opacity: 1
+
+// @keyframes zuck
+// 	0%
+// 		top: 0
+// 	50%
+// 		top: -1vw
+// 	100%
+// 		top: 0 
+
+@keyframes appear
+	0%
+		opacity: 0
+		top: -20vh
+	100%
+		opacity: 1
+
+// Main
+#services
+	text-align: center
+	.row
+		max-width: 550px  
+		margin: 0 auto
+		padding: 10px 20px 
+		&:hover #van
+			left: 55%
+		&:hover #person
+			left: 50%
+	.illustrations
+		position: relative
+		margin: 30px 10px
+		padding: 30px 0
+		height: 100px
+	
+	#blue, #red, #van, #van-two, #person
+		position: absolute
+	// left
+	.pin 
+		width: 40px
+	#blue 
+		left: 5%
+	#red 
+		right: 5%
+	#van 
+		left: 15%
+		top: -10%
+		width: 150px
+		transition: all 0.5s ease
+	// rigth 
+	#van-two 
+		width: 200px
+		right: 0%
+		top: 0%
+	#person
+		width: 100px
+		left: 20%
+		transition: all 0.5s ease

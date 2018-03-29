@@ -10,6 +10,7 @@
 <body>
 <!-- Navbar -->
 <nav>
+	<div id="navbg"></div>
 	<div id="navbar">
 		<ul class="container">
 			<li><a href="">Home</a></li>
@@ -18,14 +19,21 @@
 			<li><a href="">Jobs</a></li>
 		</ul>
 	</div>
-	<div id="navbg"></div>
 </nav>
 <!-- Navbar End -->
 
+<!-- animation -->
+
 <!-- Header -->
 <header>
+	<div class="images">
+		<img id="box-one" src="img/box.svg" alt="">
+		<img id="box-two" src="img/box.svg" alt="">
+		<img id="box-tree" src="img/box.svg" alt="">
+	</div>
+	
 	<div class="container flex">
-		<div>
+		<div id="company">
 			<h1>Pama<span>Trans</span></h1>
 			<h2>Express Kurierdienst</h2>
 			<div class="buttons">
@@ -35,10 +43,44 @@
 		</div>
 
 		<div>
-			<img src="img/transporter.png" alt="">
+			<img id="truck" src="img/transporter.png" alt="">
 		</div>
 	</div>
 </header>
 <!-- Header End -->
+
+<main>
+	<section id="services" class="container">
+		<h2>Services</h2>
+		
+		<div class="flex">
+			<div class="row">
+				<h3>Transport</h3>
+				<p>Wir helfen Ihnen zu einem günstigen und
+				fairen Preis Ihre Sachen von A nach B zu
+				transportieren.
+				</p>
+				<div class="illustrations">
+					<img src="img/pinBlue.svg" class="pin" id="blue" alt="">
+					<img src="img/pinRed.svg" class="pin" id="red" alt="">
+					<img src="img/van.svg" id="van" alt="">
+				</div>
+			</div>
+		
+			<div class="row">
+				<h3>Hilfe</h3>
+				<p>Auf Wunsch organisieren wir Helfer die Ihre
+				Möbel ab- und aufbau und in den Bus besowie
+				entladen zu einem anständigen Preis.</p>
+				<div class="illustrations">
+					<img src="img/van2.svg" id="van-two" alt="">
+					<img src="img/person.svg" id="person" alt="">
+					
+				</div>
+			</div>
+		</div>
+	</section>
+</main>
+
 </body>
 </html>
