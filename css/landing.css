@@ -125,9 +125,11 @@ header {
   text-align: center;
   overflow: hidden;
   -webkit-animation: intro 0.7s ease both, height 0.4s ease both 4s;
-  animation: intro 0.7s ease both, height 0.4s ease both 4s; }
+  animation: intro 0.7s ease both, height 0.4s ease both 4s;
+  -webkit-box-shadow: 0 10px 10px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.3); }
   header #truck {
-    width: 100%;
+    max-width: 700px;
     -webkit-transform: translateZ(1px);
     transform: translateZ(1px); }
   header h1 {
@@ -140,8 +142,9 @@ header {
       color: #f9f9f9; }
   header h2 {
     color: #f9f9f9; }
-  header button {
-    margin: 30px 10px; }
+
+button {
+  margin: 30px 10px; }
 
 .buttons {
   z-index: 3; }
@@ -186,7 +189,6 @@ header {
   .btn a {
     color: #f9f9f9;
     text-decoration: none;
-    padding: 20px 30px;
     position: relative;
     z-index: 1; }
 
@@ -243,95 +245,83 @@ nav {
     -ms-transform: scale(1.2);
     transform: scale(1.2); }
 
-@-webkit-keyframes intro {
-  0% {
-    width: 0%; }
-  100% {
-    width: 100%; } }
-
-@keyframes intro {
-  0% {
-    width: 0%; }
-  100% {
-    width: 100%; } }
-
-@-webkit-keyframes box {
-  0% {
-    -webkit-transform: scale(0) rotateZ(0deg);
-    transform: scale(0) rotateZ(0deg); }
-  100% {
-    -webkit-transform: scale(1) rotateZ(360deg);
-    transform: scale(1) rotateZ(360deg); } }
-
-@keyframes box {
-  0% {
-    -webkit-transform: scale(0) rotateZ(0deg);
-    transform: scale(0) rotateZ(0deg); }
-  100% {
-    -webkit-transform: scale(1) rotateZ(360deg);
-    transform: scale(1) rotateZ(360deg); } }
-
-@-webkit-keyframes move {
-  0% { }
-  100% {
-    left: 50vw; } }
-
-@keyframes move {
-  0% { }
-  100% {
-    left: 50vw; } }
-
-@-webkit-keyframes images {
-  0% { }
-  100% {
-    left: 10vw; } }
-
-@keyframes images {
-  0% { }
-  100% {
-    left: 10vw; } }
-
-@-webkit-keyframes truck {
-  0% {
-    left: 20vw;
-    opacity: 0; }
-  100% {
-    left: 0;
-    opacity: 1; } }
-
-@keyframes truck {
-  0% {
-    left: 20vw;
-    opacity: 0; }
-  100% {
-    left: 0;
-    opacity: 1; } }
-
-@-webkit-keyframes height {
-  0% {
-    height: 80vh; }
-  100% {
-    height: 60vh; } }
-
-@keyframes height {
-  0% {
-    height: 80vh; }
-  100% {
-    height: 60vh; } }
-
-@-webkit-keyframes appear {
-  0% {
-    opacity: 0;
-    top: -20vh; }
-  100% {
-    opacity: 1; } }
-
-@keyframes appear {
-  0% {
-    opacity: 0;
-    top: -20vh; }
-  100% {
-    opacity: 1; } }
+@media screen and (min-width: 1300px) {
+  @-webkit-keyframes intro {
+    0% {
+      width: 0%; }
+    100% {
+      width: 100%; } }
+  @keyframes intro {
+    0% {
+      width: 0%; }
+    100% {
+      width: 100%; } }
+  @-webkit-keyframes box {
+    0% {
+      -webkit-transform: scale(0) rotateZ(0deg);
+      transform: scale(0) rotateZ(0deg); }
+    100% {
+      -webkit-transform: scale(1) rotateZ(360deg);
+      transform: scale(1) rotateZ(360deg); } }
+  @keyframes box {
+    0% {
+      -webkit-transform: scale(0) rotateZ(0deg);
+      transform: scale(0) rotateZ(0deg); }
+    100% {
+      -webkit-transform: scale(1) rotateZ(360deg);
+      transform: scale(1) rotateZ(360deg); } }
+  @-webkit-keyframes move {
+    0% { }
+    100% {
+      left: 55vw; } }
+  @keyframes move {
+    0% { }
+    100% {
+      left: 55vw; } }
+  @-webkit-keyframes images {
+    0% { }
+    100% {
+      left: 10vw; } }
+  @keyframes images {
+    0% { }
+    100% {
+      left: 10vw; } }
+  @-webkit-keyframes truck {
+    0% {
+      left: 20vw;
+      opacity: 0; }
+    100% {
+      left: 0;
+      opacity: 1; } }
+  @keyframes truck {
+    0% {
+      left: 20vw;
+      opacity: 0; }
+    100% {
+      left: 0;
+      opacity: 1; } }
+  @-webkit-keyframes height {
+    0% {
+      height: 80vh; }
+    100% {
+      height: 60vh; } }
+  @keyframes height {
+    0% {
+      height: 80vh; }
+    100% {
+      height: 60vh; } }
+  @-webkit-keyframes appear {
+    0% {
+      opacity: 0;
+      top: -20vh; }
+    100% {
+      opacity: 1; } }
+  @keyframes appear {
+    0% {
+      opacity: 0;
+      top: -20vh; }
+    100% {
+      opacity: 1; } } }
 
 #services {
   text-align: center; }
@@ -346,14 +336,13 @@ nav {
     -webkit-box-pack: justify;
     -ms-flex-pack: justify;
     justify-content: space-between;
-    min-width: 550px;
     min-height: 400px;
     margin: 0 auto;
     padding: 10px 20px; }
     #services .row:hover #van {
       left: 55%; }
     #services .row:hover #person {
-      left: 50%; }
+      right: 45%; }
   #services .illustrations {
     position: relative;
     margin: 30px 10px 0;
@@ -380,7 +369,7 @@ nav {
     top: -10%; }
   #services #person {
     width: 100px;
-    left: 20%;
+    right: 60%;
     top: 0%;
     -webkit-transition: all 0.5s ease;
     -o-transition: all 0.5s ease;
@@ -403,12 +392,16 @@ nav {
 .layer-one {
   width: 33%;
   z-index: 3;
-  background-color: #FF5722; }
+  background-color: #FF5722;
+  -webkit-box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.3);
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.3); }
 
 .layer-two {
   width: 70%;
   z-index: 2;
-  background-color: #F57C00; }
+  background-color: #F57C00;
+  -webkit-box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.3);
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.3); }
 
 .layer-tree {
   width: 150%;
@@ -439,9 +432,6 @@ nav {
   transition: all 0.3s ease; }
   .icon:hover {
     width: 110px; }
-
-.space {
-  padding-bottom: 500px; }
 
 #location {
   text-align: center;
@@ -495,7 +485,9 @@ nav {
   color: #f9f9f9;
   text-align: center;
   min-height: 500px;
-  padding: 30px 0; }
+  padding: 30px 0;
+  -webkit-box-shadow: 0 -10px 10px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 -10px 10px rgba(0, 0, 0, 0.3); }
   #uber-uns p {
     text-align: justify; }
   #uber-uns .flex {
@@ -504,11 +496,11 @@ nav {
       width: 40vw;
       margin: 0 2vw; }
 
-div #bild {
+#bild {
   position: absolute;
   left: 60%;
   max-width: 25vw;
-  height: 50vh;
+  height: 450px;
   margin: 10px 50px 0;
   border-radius: 50px;
   overflow: hidden;
@@ -516,14 +508,10 @@ div #bild {
   -webkit-box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
   box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
   background: #f9f9f9; }
-  div #bild:hover figure {
+  #bild:hover figure {
     bottom: 0; }
-  div #bild:hover #pawel {
-    width: 85%;
-    right: 10%;
-    top: 3%; }
 
-div #pawel {
+#pawel {
   position: absolute;
   right: 12%;
   top: 5%;
@@ -532,7 +520,7 @@ div #pawel {
   -o-transition: all 0.5s ease;
   transition: all 0.5s ease; }
 
-div figure {
+figure {
   position: absolute;
   width: 100%;
   bottom: -20%;
@@ -542,7 +530,7 @@ div figure {
   -webkit-transition: all 0.5s ease;
   -o-transition: all 0.5s ease;
   transition: all 0.5s ease; }
-  div figure h2 {
+  figure h2 {
     margin: 0; }
 
 #kunden {
@@ -699,3 +687,156 @@ footer {
     margin: 0;
     padding: 0;
     font-size: 15px; }
+
+@media screen and (max-width: 1300px) {
+  .container {
+    width: 90%; }
+  header h1 {
+    font-size: 70px; }
+  header h2 {
+    font-size: 25px; }
+  button {
+    margin: 10px; }
+  .images {
+    display: none; }
+  #uber-uns .flex div {
+    width: 50vw;
+    margin: 0 2vw; }
+  #bild {
+    left: 60%;
+    top: 12%;
+    max-width: 30vw;
+    height: 400px; }
+  #pawel {
+    right: 5%;
+    top: 0%;
+    width: 90%; }
+  header #truck {
+    max-width: 580px; }
+  #services .row:hover #van {
+    left: 50%; }
+  #kunden [src^="img/vw"], #kunden [src^="img/zeg"], #kunden [src^="img/papi"] {
+    width: 14%;
+    height: 14%; } }
+
+@media screen and (max-width: 1000px) {
+  header #truck {
+    max-width: 400px; } }
+
+@media screen and (max-width: 850px) {
+  .flex {
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap; }
+  header {
+    padding-bottom: 30px; }
+  #truck {
+    display: none; }
+  #location #pin {
+    width: 40px;
+    top: 22%;
+    left: 39%; }
+  #location .hover:hover #pin {
+    top: 27%;
+    left: 43%; }
+  #uber-uns {
+    height: 1000px; }
+    #uber-uns .flex div {
+      width: 85vw;
+      margin: 0 auto; }
+  #bild {
+    left: 13%;
+    top: 108%;
+    max-width: 60vw; }
+  #pawel {
+    right: 12%;
+    top: -5%;
+    width: 80%; }
+  nav li {
+    margin-top: 15px;
+    padding: 15px; } }
+
+@media screen and (max-width: 550px) {
+  header h1 {
+    font-size: 60px; }
+  h2 {
+    font-size: 30px;
+    border-bottom: 3px solid #212121; }
+  h3 {
+    font-size: 22px; }
+  a, p {
+    font-size: 18px; }
+  #navbar li {
+    margin-top: 30px;
+    padding: 0px; }
+  #navbar a {
+    padding: 10px; }
+  #adj {
+    height: 600px;
+    overflow: hidden;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column; }
+    #adj h2 {
+      border-bottom: none;
+      color: #f9f9f9; }
+  .layer-one, .layer-two, .layer-tree {
+    position: static;
+    -webkit-transform: skew(0deg);
+    -ms-transform: skew(0deg);
+    transform: skew(0deg);
+    width: 100%;
+    height: 200px; }
+  .layer-one {
+    -webkit-box-shadow: 0 8px 10px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 8px 10px rgba(0, 0, 0, 0.3); }
+  .layer-two {
+    -webkit-box-shadow: 0 8px 10px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 8px 10px rgba(0, 0, 0, 0.3); }
+  .above-one, .above-two, .above-tree {
+    -webkit-transform: skew(0deg);
+    -ms-transform: skew(0deg);
+    transform: skew(0deg); }
+  .above-two, .above-tree {
+    margin-left: 0%; }
+  .icon {
+    width: 80px;
+    padding: 5px;
+    border-radius: 25%; }
+  #uber-uns {
+    height: 800px; }
+    #uber-uns #bild {
+      height: 330px;
+      left: 2%;
+      max-width: 80vw; }
+  #kontakt {
+    height: 550px; }
+    #kontakt ul {
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+      flex-direction: column; }
+      #kontakt ul li {
+        margin: 60px 0 0; }
+  footer {
+    height: 180px;
+    text-align: center; }
+    footer .flex {
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      -webkit-box-pack: start;
+      -ms-flex-pack: start;
+      justify-content: flex-start; }
+    footer a {
+      padding: 20px 0 0; }
+    footer p {
+      margin-top: 20px; }
+  #kunden [src^="img/vw"], #kunden [src^="img/zeg"], #kunden [src^="img/papi"] {
+    width: 25%;
+    height: 25%;
+    padding: 0; } }
