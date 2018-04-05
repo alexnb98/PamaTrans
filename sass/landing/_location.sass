@@ -1,0 +1,23 @@
+#location 
+	text-align: center
+	position: relative
+	perspective: 10000px
+
+	#germany
+		fill: $deepOrange
+		width: 200px
+		filter: drop-shadow(10px 10px 0px $dark) drop-shadow(15px 15px 5px $light)
+		transform: rotateX(40deg) rotateY(0deg) rotateZ(30deg)
+		transition: all 1s ease 
+	.hover
+		&:hover
+			#germany
+				transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) 
+	#europe
+		width: 300px
+		filter: drop-shadow(5px 5px 0px $orange) drop-shadow(10px 10px 5px $light)
+		transform: rotateX(40deg) rotateY(0deg) rotateZ(30deg)
+		transition: all 1s ease 
+		&:hover 
+			transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) 
+			filter: drop-shadow(2px 2px 0px $orange) drop-shadow(5px 5px 5px $light)

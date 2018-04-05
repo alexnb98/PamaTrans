@@ -21,8 +21,63 @@ a, p {
   margin: 0 auto;
   width: 80%; }
 
+.buttons {
+  z-index: 3; }
+
+.btn {
+  position: relative;
+  background: none;
+  cursor: pointer;
+  min-width: 250px;
+  text-transform: uppercase;
+  position: relative;
+  border: 3px solid #fff;
+  border-radius: 15px;
+  padding: 20px 30px;
+  color: #fff;
+  overflow: hidden; }
+  .btn:after {
+    content: '';
+    position: absolute;
+    z-index: 0;
+    -webkit-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+    width: 100%;
+    height: 0;
+    top: 50%;
+    left: 50%;
+    background: #F57C00;
+    opacity: 0;
+    -webkit-transform: translateX(-50%) translateY(-50%) rotate(45deg);
+    -ms-transform: translateX(-50%) translateY(-50%) rotate(45deg);
+    transform: translateX(-50%) translateY(-50%) rotate(45deg); }
+  .btn:hover, .btn:active {
+    color: #000;
+    border: 3px solid #FF5722; }
+  .btn:hover:after {
+    height: 260%;
+    opacity: 1; }
+  .btn:active:after {
+    height: 400%;
+    opacity: 1; }
+  .btn a {
+    color: #f9f9f9;
+    text-decoration: none;
+    position: relative;
+    z-index: 1; }
+
+.flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; }
+  .flex div {
+    width: 100%; }
+
 nav {
-  background-color: #212121; }
+  background-color: #212121;
+  -webkit-animation: intro 0.7s ease both;
+  animation: intro 0.7s ease both; }
   nav #navbg {
     background-color: #FF5722;
     position: relative;
@@ -118,6 +173,34 @@ nav {
     color: #212121;
     padding: 20px; }
 
+#navbg, #navbar, #company {
+  -webkit-animation: appear 0.5s ease both 4s;
+  animation: appear 0.5s ease both 4s; }
+
+@media screen and (min-width: 1300px) {
+  @-webkit-keyframes intro {
+    0% {
+      width: 0%; }
+    100% {
+      width: 100%; } }
+  @keyframes intro {
+    0% {
+      width: 0%; }
+    100% {
+      width: 100%; } }
+  @-webkit-keyframes appear {
+    0% {
+      opacity: 0;
+      top: -20vh; }
+    100% {
+      opacity: 1; } }
+  @keyframes appear {
+    0% {
+      opacity: 0;
+      top: -20vh; }
+    100% {
+      opacity: 1; } } }
+
 header {
   background-color: #212121;
   top: -150px;
@@ -146,71 +229,10 @@ header {
 button {
   margin: 30px 10px; }
 
-.buttons {
-  z-index: 3; }
-
-.btn {
-  position: relative;
-  background: none;
-  cursor: pointer;
-  min-width: 250px;
-  text-transform: uppercase;
-  position: relative;
-  border: 3px solid #fff;
-  border-radius: 15px;
-  padding: 20px 30px;
-  color: #fff;
-  overflow: hidden; }
-  .btn:after {
-    content: '';
-    position: absolute;
-    z-index: 0;
-    -webkit-transition: all 0.3s;
-    -o-transition: all 0.3s;
-    transition: all 0.3s;
-    width: 100%;
-    height: 0;
-    top: 50%;
-    left: 50%;
-    background: #F57C00;
-    opacity: 0;
-    -webkit-transform: translateX(-50%) translateY(-50%) rotate(45deg);
-    -ms-transform: translateX(-50%) translateY(-50%) rotate(45deg);
-    transform: translateX(-50%) translateY(-50%) rotate(45deg); }
-  .btn:hover, .btn:active {
-    color: #000;
-    border: 3px solid #FF5722; }
-  .btn:hover:after {
-    height: 260%;
-    opacity: 1; }
-  .btn:active:after {
-    height: 400%;
-    opacity: 1; }
-  .btn a {
-    color: #f9f9f9;
-    text-decoration: none;
-    position: relative;
-    z-index: 1; }
-
-.flex {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex; }
-  .flex div {
-    width: 100%; }
-
-#navbg, #navbar, #company {
-  -webkit-animation: appear 0.5s ease both 4s;
-  animation: appear 0.5s ease both 4s; }
-
-nav {
-  -webkit-animation: intro 0.7s ease both;
-  animation: intro 0.7s ease both; }
-
 .images {
   position: absolute;
   width: 10%;
-  top: 35%;
+  top: 300px;
   left: 30vw;
   -webkit-animation: images 0.75s linear both 2s;
   animation: images 0.75s linear both 2s; }
@@ -246,16 +268,6 @@ nav {
     transform: scale(1.2); }
 
 @media screen and (min-width: 1300px) {
-  @-webkit-keyframes intro {
-    0% {
-      width: 0%; }
-    100% {
-      width: 100%; } }
-  @keyframes intro {
-    0% {
-      width: 0%; }
-    100% {
-      width: 100%; } }
   @-webkit-keyframes box {
     0% {
       -webkit-transform: scale(0) rotateZ(0deg);
@@ -304,24 +316,14 @@ nav {
     0% {
       height: 80vh; }
     100% {
+      min-height: 550px;
       height: 60vh; } }
   @keyframes height {
     0% {
       height: 80vh; }
     100% {
-      height: 60vh; } }
-  @-webkit-keyframes appear {
-    0% {
-      opacity: 0;
-      top: -20vh; }
-    100% {
-      opacity: 1; } }
-  @keyframes appear {
-    0% {
-      opacity: 0;
-      top: -20vh; }
-    100% {
-      opacity: 1; } } }
+      min-height: 550px;
+      height: 60vh; } } }
 
 #services {
   text-align: center; }
@@ -451,20 +453,6 @@ nav {
   #location .hover:hover #germany {
     -webkit-transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
     transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg); }
-  #location .hover:hover #pin {
-    top: 51%;
-    left: 21%; }
-  #location #pin {
-    position: absolute;
-    width: 40px;
-    top: 43%;
-    left: 19%;
-    z-index: 1;
-    -webkit-transition: all 1s ease;
-    -o-transition: all 1s ease;
-    transition: all 1s ease;
-    -webkit-filter: drop-shadow(3px 3px 3px rgba(0, 0, 0, 0.25));
-    filter: drop-shadow(3px 3px 3px rgba(0, 0, 0, 0.25)); }
   #location #europe {
     width: 300px;
     -webkit-filter: drop-shadow(5px 5px 0px #F57C00) drop-shadow(10px 10px 5px #BDBDBD);
@@ -568,7 +556,8 @@ figure {
   background-color: #212121;
   text-align: center;
   color: #f9f9f9;
-  position: relative; }
+  position: relative;
+  scroll-behavior: smooth; }
   #kontakt h2 {
     margin: 0;
     padding: 30px; }
@@ -691,14 +680,18 @@ footer {
 @media screen and (max-width: 1300px) {
   .container {
     width: 90%; }
+  button {
+    margin: 10px; }
   header h1 {
     font-size: 70px; }
   header h2 {
     font-size: 25px; }
-  button {
-    margin: 10px; }
+  header #truck {
+    max-width: 580px; }
   .images {
     display: none; }
+  #services .row:hover #van {
+    left: 50%; }
   #uber-uns .flex div {
     width: 50vw;
     margin: 0 2vw; }
@@ -711,10 +704,6 @@ footer {
     right: 5%;
     top: 0%;
     width: 90%; }
-  header #truck {
-    max-width: 580px; }
-  #services .row:hover #van {
-    left: 50%; }
   #kunden [src^="img/vw"], #kunden [src^="img/zeg"], #kunden [src^="img/papi"] {
     width: 14%;
     height: 14%; } }
@@ -727,49 +716,13 @@ footer {
   .flex {
     -ms-flex-wrap: wrap;
     flex-wrap: wrap; }
+  nav li {
+    margin-top: 15px;
+    padding: 15px; }
   header {
     padding-bottom: 30px; }
   #truck {
     display: none; }
-  #location #pin {
-    width: 40px;
-    top: 22%;
-    left: 39%; }
-  #location .hover:hover #pin {
-    top: 27%;
-    left: 43%; }
-  #uber-uns {
-    height: 1000px; }
-    #uber-uns .flex div {
-      width: 85vw;
-      margin: 0 auto; }
-  #bild {
-    left: 13%;
-    top: 108%;
-    max-width: 60vw; }
-  #pawel {
-    right: 12%;
-    top: -5%;
-    width: 80%; }
-  nav li {
-    margin-top: 15px;
-    padding: 15px; } }
-
-@media screen and (max-width: 550px) {
-  header h1 {
-    font-size: 60px; }
-  h2 {
-    font-size: 30px;
-    border-bottom: 3px solid #212121; }
-  h3 {
-    font-size: 22px; }
-  a, p {
-    font-size: 18px; }
-  #navbar li {
-    margin-top: 30px;
-    padding: 0px; }
-  #navbar a {
-    padding: 10px; }
   #adj {
     height: 600px;
     overflow: hidden;
@@ -807,11 +760,75 @@ footer {
     padding: 5px;
     border-radius: 25%; }
   #uber-uns {
-    height: 800px; }
+    height: 1000px; }
+    #uber-uns .flex div {
+      width: 85vw;
+      margin: 0 auto; }
+  #bild {
+    left: 13%;
+    top: 108%;
+    max-width: 60vw; }
+  #pawel {
+    right: 12%;
+    top: -5%;
+    width: 80%; }
+  footer {
+    height: 280px; } }
+
+@media screen and (max-width: 550px) {
+  h2 {
+    font-size: 28px;
+    border-bottom: 3px solid #212121; }
+  h3 {
+    font-size: 20px; }
+  a, p {
+    font-size: 16px; }
+  .container {
+    width: 95%; }
+  .btn {
+    padding: 12px; }
+  nav {
+    height: 100px; }
+  #navbar li {
+    margin-top: 30px;
+    padding: 0px; }
+  #navbar a {
+    padding: 0px; }
+  #navbar ul {
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    padding: 0; }
+  header h1 {
+    font-size: 40px; }
+  #services .row:hover #van {
+    left: 30%; }
+  #services #blue {
+    left: -5%; }
+  #services #red {
+    right: 0%; }
+  #services #person {
+    right: 75%; }
+  #services #van-two {
+    right: -5%; }
+  #location #germany {
+    -webkit-transform: rotateX(30deg) rotateY(0deg) rotateZ(20deg);
+    transform: rotateX(30deg) rotateY(0deg) rotateZ(20deg);
+    width: 150px; }
+  #location #europe {
+    -webkit-transform: rotateX(30deg) rotateY(0deg) rotateZ(20deg);
+    transform: rotateX(30deg) rotateY(0deg) rotateZ(20deg);
+    width: 180px; }
+  #uber-uns {
+    height: 850px; }
     #uber-uns #bild {
       height: 330px;
       left: 2%;
       max-width: 80vw; }
+  #kunden [src^="img/vw"], #kunden [src^="img/zeg"], #kunden [src^="img/papi"] {
+    width: 25%;
+    height: 25%;
+    padding: 0; }
   #kontakt {
     height: 550px; }
     #kontakt ul {
@@ -835,8 +852,4 @@ footer {
     footer a {
       padding: 20px 0 0; }
     footer p {
-      margin-top: 20px; }
-  #kunden [src^="img/vw"], #kunden [src^="img/zeg"], #kunden [src^="img/papi"] {
-    width: 25%;
-    height: 25%;
-    padding: 0; } }
+      margin-top: 20px; } }

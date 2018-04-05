@@ -1,0 +1,87 @@
+header
+	// height: 80vh
+	background-color: $dark
+	top: -150px
+	z-index: -2
+	text-align: center
+	overflow: hidden
+	animation: intro 0.7s ease both, height 0.4s ease both 4s
+	box-shadow: 0 10px 10px rgba(0,0,0,0.3)
+	#truck 
+		max-width: 700px
+		transform: translateZ(1px)
+	h1
+		font-size: 100px
+		text-transform: uppercase
+		color: $orange
+		font-weight: black
+		text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3)
+		span
+			color: $white
+	h2
+		color: $white
+button
+	margin: 30px 10px 
+
+.images
+	position: absolute
+	width: 10% 
+	top: 300px
+	left: 30vw
+	animation: images 0.75s linear both 2s
+	#box-one
+		position: absolute
+		left: 0vw
+		animation: box 0.75s ease both 0.5s, move 0.25s ease-in both 2.75s 
+	#box-two
+		position: absolute
+		left: 12vw 
+		animation: box 0.75s ease both 0.9s, move 0.25s ease-in both 3s 
+	#box-tree
+		position: absolute
+		left: 24vw 
+		animation: box 0.75s ease both 1.3s, move 0.25s ease-in both 3.25s 
+
+#truck
+	position: relative
+	animation: truck 0.75s ease both 2s, zuck 0.2s ease both 2.9s
+	transition: all 0.4s 
+	transform: scale(1)
+	&:hover 
+		transform: scale(1.2)
+
+// Animation 
+@media screen and (min-width: 1300px)
+	@keyframes box 
+		0% 
+			transform: scale(0) rotateZ(0deg)
+		100%
+			transform: scale(1) rotateZ(360deg)
+
+	@keyframes move
+		0%
+
+		100%
+			left: 55vw
+
+	@keyframes images
+		0%
+			
+		100%
+			left: 10vw
+
+	@keyframes truck 
+		0%
+			left: 20vw
+			opacity: 0
+		100%
+			left: 0
+			opacity: 1
+
+	@keyframes height  
+		0%
+			height: 80vh
+		100%
+			min-height: 550px
+			height: 60vh
+

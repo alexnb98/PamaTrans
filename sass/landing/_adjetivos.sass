@@ -1,0 +1,41 @@
+#adj 
+	position: relative
+	height: 250px 
+	overflow: hidden
+
+.layer-one, .layer-two, .layer-tree
+	position: absolute
+	height: 250px 
+	left: -5%
+	top: 0
+	transform: skew(-20deg)	
+.layer-one
+	width: 33% 
+	z-index: 3
+	background-color: $deepOrange
+	box-shadow: 10px 10px 10px rgba(0,0,0,0.3)
+.layer-two
+	width: 70% 
+	z-index: 2
+	background-color: $orange
+	box-shadow: 10px 10px 10px rgba(0,0,0,0.3)
+.layer-tree
+	width: 150% 
+	z-index: 1
+	background-color: $lightOrange
+.above-one, .above-two, .above-tree
+	transform: skew(20deg)
+	text-align: center
+.above-two
+	margin-left: 40%
+.above-tree
+	margin-left: 15%
+.icon
+	width: 100px
+	padding: 10px
+	background-color: $white
+	border-radius: 50%
+	box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.25)
+	transition: all 0.3s ease 
+	&:hover
+		width: 110px
